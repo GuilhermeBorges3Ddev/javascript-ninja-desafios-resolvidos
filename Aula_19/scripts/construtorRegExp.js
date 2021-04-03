@@ -23,7 +23,7 @@ console.log(regex.test(firstName))
 console.log("----------------------------------------")
 
 //Outro método dela é o .exec(string)...
-//Ele retorna o caracere que bate com a string buscada, até que não haja mais correspondência, daí ele retorna NULL
+//Ele retorna o caractere que bate com a string buscada, até que não haja mais correspondência, daí ele retorna NULL
 regex = /\d/g
 console.log(regex.exec(firstName))
 console.log(regex.exec(firstName))
