@@ -34,11 +34,11 @@
      *  Podemos acessar o document como objeto para recuperar elementos
      *  
     */
-    console.log("Tag <a> do meu documento com id 'my-link': ", doc.getElementById("my-link"))
+    console.log("Tag <a> do meu documento com id 'my-link': ", doc.getElementById("my-link"));
     console.log("-------------------------------------");
-    console.log("Tags <a> do meu documento com classe 'my-class': ", doc.getElementsByClassName("my-classbrub"))
+    console.log("Tags <a> do meu documento com classe 'my-class': ", doc.getElementsByClassName("my-class"));
     console.log("-------------------------------------");
-    console.log("Tags <a> do meu documento sem fitrar por classe ou id: ", doc.getElementsByTagName("a"))
+    console.log("Tags <a> do meu documento sem fitrar por classe ou id: ", doc.getElementsByTagName("a"));
 
     
 })(window, document)
