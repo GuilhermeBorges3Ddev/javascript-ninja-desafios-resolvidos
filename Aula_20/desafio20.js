@@ -15,12 +15,8 @@ O HTML NÃO PODE ser alterado!
     nome, `username` deve receber "Desconhecido".
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
-    var $username = win.prompt("Qual o seu nome?");
-    
-    if(!!$username === false)
-        $username = "Desconhecido"
-
-    win.alert("Bem vindo " + $username + "!")
+    var $username = win.prompt("Qual o seu nome?") || 'Desconhecido';
+    win.alert("Bem vindo " + $username + "!");
 
     /*
     Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
@@ -32,19 +28,19 @@ O HTML NÃO PODE ser alterado!
     - Selecione o input de "Nome", atribuindo-o à uma variável chamada
     `$inputUsername`.
     */
-    var $inputUsername = doc.querySelector("#username");
+    var $inputUsername = doc.querySelector('input[name="username"]');
 
     /*
     - Selecione o input de "Email", atribuindo-o à uma variável chamada
     `$inputEmail`.
     */
-    var $inputEmail = doc.querySelector("#email");
+    var $inputEmail = doc.querySelector('input[name="email"]');
 
     /*
     - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
     `$message`.
     */
-    var $message = doc.querySelector("#message");
+    var $message = doc.querySelector("textarea");
 
     /*
     - Selecione o botão de envio do formulário, atribuindo-o à uma variável
@@ -83,11 +79,19 @@ O HTML NÃO PODE ser alterado!
     */
     $button.addEventListener('click', function(e){
         
-        if(!!$inputUsername === false) alert("Preencha o nome do usuário!");
-        if(!!$inputEmail === false) alert("Preencha o e-mail!");
-        if(!!$message === false) alert("Preencha a mensagem!");
+        e.preventDefault();
 
-        
+        if(!$inputUsername.value) 
+            return alert("Preencha o nome do usuário!");
+        if(!$inputEmail.value) 
+            return alert("Preencha o e-mail!");
+        if(!isValidEmail($inputEmail.value)) 
+            return alert("Entre com um e-mail válido!");
+        if(!$message.value) 
+            return alert("Preencha a mensagem!");
+        if(!confirm("Tem certeza que deseja enviar o formulário?")) 
+            alert("Não enviado.");
+        return alert("Enviado com sucesso!");
 
     }, false);
 
@@ -115,5 +119,9 @@ O HTML NÃO PODE ser alterado!
         - "rita-marica@titica.a.b"
         - "agua_@evida.br.com"
     */
-    // ?
+    function isValidEmail(email) {
+        var regexMailValidator = /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/gm;
+        return regexMailValidator.test(email)
+    }
+
 })(document, window);
