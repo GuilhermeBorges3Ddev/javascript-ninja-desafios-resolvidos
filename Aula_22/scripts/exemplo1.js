@@ -37,7 +37,7 @@
         lastName: "Borges"
     };
 
-    var obj = {
+    var obj2 = {
         lastName: "Silva"
     };
 

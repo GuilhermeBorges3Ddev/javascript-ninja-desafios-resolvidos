@@ -12,6 +12,7 @@
         Array.prototype.forEach.call(arguments, function(item) {
             console.log(item);
         })
+        console.log("-------------------");
         var result = Array.prototype.reduce.call(arguments, function(ac, actual){
             return (ac + actual)
         })
