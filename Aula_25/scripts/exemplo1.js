@@ -4,7 +4,7 @@
 
   /**
    * Quando colocamos 'false' ao fim do eventListener ele aplica a propagação de filho pra pai
-   * Se colocarmos 'true' no eventListener pai ele propaga ao contrário, ou seja, não sobre até o evento do pai
+   * Se colocarmos 'true' no eventListener pai ele propaga ao contrário, ou seja, não sobe até o evento do pai
   */
 
   function on(element, event, callback) {
