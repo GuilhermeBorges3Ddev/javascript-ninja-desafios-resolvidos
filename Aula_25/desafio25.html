@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio 25 - Aplicando os conhecimentos sobre eventos</title>
+</head>
+<body>
+    <h3>Propagando/Testando eventos em tags diferentes: </h3>
+
+    <div data-js="external-links-div" style="border:1px solid black;">
+      <a data-js="first-link"><u>&nbsp;&nbsp; Sou a div mais externa</u></a><br>
+      <a data-js="second-link"><u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sou a div do meio</u></a><br>
+      <a data-js="third-link"><u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sou a div mais interna</u></a>
+    </div>
+
+    <br></br>
+
+    <button data-js="simple-btn">Passe o mouse</button>
+
+    <br></br>
+
+    <svg data-js="svg-element" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" stroke="red" fill="grey">
+      <circle id="inner" cx="10" cy="10" r="10" />
+    </svg>
+
+    <script src="./scripts/desafio25.js"></script>
+</body>
+</html>
