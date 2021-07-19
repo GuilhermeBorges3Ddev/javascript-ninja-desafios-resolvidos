@@ -8,7 +8,7 @@
    * A propriedade ".lastElementChild" traz a última tag HTML partindo do nó em que se deu a busca.
    * A propriedade ".nextElementSibling" traz a próxima tag HTML irmã do nó em que se deu a busca.
    * A propriedade ".previousElementSibling" traz a primeira tag HTML irmã acima do nó em que se deu a busca.
-   * A propriedade ".childElementCount" retorna um inteiro com a queantidade de tags HTML filhas do elmento buscado (o mesmo que usarmos children.length).
+   * A propriedade ".childElementCount" retorna um inteiro com a quantidade de tags HTML filhas do elmento buscado (o mesmo que usarmos children.length).
    * -------------------------------------------------------------------------------------------------------------------------------------------------------------
    * Já quanto aos métodos, temos o .hasAttribute(name); que retorna true na presença do atributo buscado e false caso esse atributo não seja encontrado.
    * O método .hasAttributes() por sua vez não busca por um atributo específico, mas sim se o nó buscado possui algum atributo; caso tenha algum 'true', caso não, 'false'.
