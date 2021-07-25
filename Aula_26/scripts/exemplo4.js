@@ -7,7 +7,7 @@
    * Usando o .appendChild(child) o elemento passado mudará de lugar, ou seja, ele é movido permanentemente do lugar onde estava.
    * Além do .appendChild(child) temos o método .insertBefore(node, beforeWhom), que espera o elemento á ser inserido e quem é o elemento que terá sua inserção.
    * O método .cloneNode(boolean) por sua vez clona um nó que já temos, se passarmos "true" ele copia o elemento e o conteúdo, senão, apenas o elemento.
-   * Também temos o método .hasChildNodes(), que
+   * Também temos o método .hasChildNodes(), que traz "true" caso o elemento pesquisado tenha filhos ou "false" caso contrário.
   */
 
   var $main = doc.querySelector('.main');
