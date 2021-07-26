@@ -7,7 +7,7 @@
    * Com a parte comentada abaixo, que usa duas vezes a chamada do evento onclick, há a sobrescrita de eventos, por isso não é mais usado.
    * Existe também o removeEventListener() que remove um determinado evento de uma tag, desde que a função desse evento não seja anônima.
    * Quando falamos em eventos temos os eventos de formulário, para o input temos por exemplo: input, keyup e keydown.
-   * Já para a tag <select>
+   * Já para a tag <select> temo o evento 'change', que pega o momento em que se deu uma troca de valor de uma option para outra.
   */
 
   // var $a = doc.querySelector('[data-js="link"]');
