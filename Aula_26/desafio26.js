@@ -21,15 +21,40 @@
       Dica: olhe os erros que acontecem no console, e vá resolvendo um a um.
       Só passe para o próximo problema quando tiver resolvido o anterior :)
   */
-// ?
+
+  function DOM(selectedNodeDom) {
+    this.element = this.getDomElements(selectedNodeDom);
+  }
+
+  DOM.prototype.getDomElements = function getDomElements(elements) {
+    return doc.querySelectorAll(elements);
+  }
+
+  DOM.prototype.on = function on(event, callback) {
+    Array.prototype.forEach.call(this.element, function(element) {
+      element.addEventListener(event, callback, false);
+    });
+  }
+
+  DOM.prototype.off = function off(event, callback) {
+    Array.prototype.forEach.call(this.element, function(element) {
+      element.removeEventListener(event, callback, true);
+    });
+  }
+
+  DOM.prototype.get = function get() {
+    return this.element;
+  }
 
   var $a = new DOM('[data-js="link"]');
-  $a.on('click', function(e) {
+
+  $a.on('click', function handleClick(e) {
     e.preventDefault();
     console.log('clicou');
+    $a.off('click', handleClick);
   });
 
   console.log('Elementos selecionados:', $a.get());
-  console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+  console.log('$a é filho de body?', $a.get()[0].parentNode === doc.body);
 
 }(document));
