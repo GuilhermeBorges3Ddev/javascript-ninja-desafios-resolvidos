@@ -1,4 +1,7 @@
 (function(doc){
+
+  'use strict';
+
   /**
    * Atributos de elementos HTML disponíveis via JS como atributos do objeto DOM(que são ao mesmpo Getters e Setters):
    * element.id
