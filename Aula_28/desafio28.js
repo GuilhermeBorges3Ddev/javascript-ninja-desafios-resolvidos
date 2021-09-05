@@ -15,7 +15,7 @@
       - O CEP pode ser entrado pelo usuário com qualquer tipo de caractere, mas
       deve ser limpo e enviado somente os números para a requisição abaixo;
       - Ao submeter esse formulário, deve ser feito um request Ajax para a URL:
-      "https://viacep.com.br/ws/[CEP]/json/", onde [CEP] será o CEP passado
+      "http://cep.corriocontrol.com.br/[CEP].json/", onde [CEP] será o CEP passado
       no input criado no HTML;
       - Essa requisição trará dados de um CEP em JSON. Preencha campos na tela
       com os dados recebidos.
@@ -27,7 +27,6 @@
       "Endereço referente ao CEP [CEP]:"
       - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
       adicionar as informações em tela.
-    OBS: Caso a viacep.com.br não funcionar usar a API: https://apicep.com/api-de-consulta/
   */
 
 })(window);
