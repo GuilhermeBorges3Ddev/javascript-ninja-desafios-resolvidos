@@ -7,6 +7,46 @@
   <title>Desafio 28 - AJAX</title>
 </head>
 <body>
+
+  <h1>Neste desafio 28, entre com um CEP para ser buscado e clique em submit:</h1>
+  <h3>Após o submit as informações sobre este CEP aparecerão na tela</h3>
+  <hr>
+
+  <br />
+  <label for="cepBuscado">Digite aqui o CEP (apenas números): </label>
+  <input type="text" name="cepBuscado" id="cepBuscado">
+  <br /><br />
+  <input type="submit" value="Submit">
+  <hr>
+
+  <br />
+    <span>Informações do CEP buscado: </span>
+  <br />
+  <br />
+    <label for="logradouro">Logradouro:</label>
+    <input type="text" id="logradouro" name="logradouro" value="Rua X" readonly>
+  <br /><br />
+    <label for="bairro">Bairro:</label>
+    <input type="text" id="bairro" name="bairro" value="Bairro Y" readonly>
+  <br /><br />
+    <label for="estado">Estado:</label>
+    <input type="text" id="estado" name="estado" value="Estado Z" readonly>
+  <br /><br />
+    <label for="cidade">Cidade:</label>
+    <input type="text" id="cidade" name="cidade" value="Cidade W" readonly>
+  <br /><br />
+    <label for="cep">CEP:</label>
+    <input type="text" id="cep" name="cep" value="xxxxx-xxx" readonly>
+  <br /><br />
+  <hr>
+
+  <br />
+    <span>Status da requisição:</span>
+  <br /><br />
+  <textarea id="estadoDaRequisicao" name="estadoDaRequisicao" rows="2" cols="50">
+    Carregando, sucesso ou erro.
+  </textarea>
+
   <script src="./desafio28.js"></script>
 </body>
 </html>
