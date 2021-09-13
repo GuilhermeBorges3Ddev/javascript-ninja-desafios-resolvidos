@@ -116,10 +116,17 @@
       return message.replace('[CEP]', clearCEP());
     }
 
+    //Se além da função app() precisarmos exportar outras funções no return abaixo...
+    //Esse modelo de exportação é conhecido como revealing module pattern
+    return {
+      getMessage: getMessage,
+      replaceCEP: replaceCEP
+    };
+
   }
 
   //Encapsulamos todas as funções do "desafio28.js", com isso, colocamos as mesmas dentro de app(), que pode ser pendurada em window
-  //window.app = app;
+  window.app = app();
   app();
 
   //Aqui ao fim recuperamos a propriedade DOM de window, que foi exportado do arquivo "dom.js"
