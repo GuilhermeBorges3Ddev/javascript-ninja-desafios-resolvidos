@@ -6,6 +6,35 @@
     this.element = this.getDomElements(selectedNodeDom);
   }
 
+  DOM.isArray = function isArray(param) {
+    return Object.prototype.toString.call(param) === "[object Array]";
+  };
+
+  DOM.isObject = function isObject(param) {
+    return Object.prototype.toString.call(param) === "[object Object]";
+  };
+
+  DOM.isFunction = function isFunction(param) {
+    return Object.prototype.toString.call(param) === "[object Function]";
+  };
+
+  DOM.isNumber = function isNumber(param) {
+    return Object.prototype.toString.call(param) === "[object Number]";
+  };
+
+  DOM.isString = function isString(param) {
+    return Object.prototype.toString.call(param) === "[object String]";
+  };
+
+  DOM.isBoolean = function isBoolean(param) {
+    return Object.prototype.toString.call(param) === "[object Boolean]";
+  };
+
+  DOM.isNull = function isNull(param) {
+    return Object.prototype.toString.call(param) === "[object Null]" ||
+    Object.prototype.toString.call(param) === "[object Undefined]"
+  };
+
   DOM.prototype.getDomElements = function getDomElements(elements) {
     return doc.querySelectorAll(elements);
   };
