@@ -3,6 +3,8 @@
   'use strict';
 
   function DOM(selectedNodeDom) {
+    if(!(this instanceof DOM))
+      return new DOM(selectedNodeDom);
     this.element = this.getDomElements(selectedNodeDom);
   }
 
@@ -51,8 +53,10 @@
     });
   };
 
-  DOM.prototype.get = function get() {
-    return this.element;
+  DOM.prototype.get = function get(index) {
+    if(!index)
+      return this.element[0];
+    return this.element[index];
   };
 
   DOM.prototype.forEach = function forEach() {
