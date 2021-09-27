@@ -5,12 +5,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aula 31 - innerHTML, objetos Date e Math</title>
+  <style>
+    textarea {
+      display: block;
+      margin-bottom: 10px;
+    }
+    form, div {
+      float: left;
+      width: 50%;
+      margin: 0%;
+    }
+  </style>
 </head>
 <body>
-  <div class="main" data-js="main">
-    <h1>Título</h1>
-    <p>Parágrafo</p>
-  </div>
-  <script src="./scripts/exemplo_1.js"></script>
+  <form action="/" method="GET" data-js="form">
+    <textarea data-js="textarea" rows="10" cols="50"></textarea>
+    <button type="submit" data-js="button">Enviar</button>
+  </form>
+  <div class="main" data-js="main"></div>
+  <!--
+    Descomentar esse código para rodar o exemplo_1.js
+    <div class="main" data-js="main">
+      <h1>Título</h1>
+      <p>Parágrafo</p>
+    </div>
+  -->
+  <!-- <script src="./scripts/exemplo_1.js"></script> -->
+  <script src="./scripts/exemplo_2.js"></script>
 </body>
 </html>
