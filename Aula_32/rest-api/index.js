@@ -8,8 +8,8 @@ app.use(cors());
 
 var users = {
   joao: {
-    nome: "João",
-    idade: 30
+    nome: "Monica",
+    idade: 27
   },
   maria: {
     nome: "Maria",

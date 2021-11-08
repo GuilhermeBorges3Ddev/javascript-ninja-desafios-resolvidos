@@ -25,7 +25,7 @@
   ajax.send();
 
   ajax.onreadystatechange = function(e) {
-    if(ajax.readyState == 2) {
+    if(ajax.readyState === 2) {
       console.log("Headers OK!");
       ajax.abort();
     }
