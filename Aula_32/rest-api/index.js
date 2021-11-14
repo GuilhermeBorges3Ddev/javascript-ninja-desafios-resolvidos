@@ -4,37 +4,53 @@ var express = require('express');
 var cors = require('cors');
 var app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
-var users = {
-  joao: {
-    nome: "Monica",
-    idade: 27
+var users = [
+  {
+    username: "monica",
+    name: "Mônica",
+    age: 27
   },
-  maria: {
-    nome: "Maria",
-    idade: 22
+  {
+    username: "maria",
+    name: "Maria",
+    age: 22
   },
-  guilherme: {
-    nome: "Guilherme",
-    idade: 26
+  {
+    username: "guilherme",
+    name: "Guilherme",
+    age: 26
   }
-};
+];
 
 app.get('/', function(req, res) {
-  res.send('<h1>Home</h1>')
+  res.json({ response: 'Home' })
 });
 
 app.get('/user', function(req, res) {
-  res.send('User')
+  res.json({ response: 'User' })
 });
 
 app.get('/user/:username', function(req, res) {
   var username = req.params.username;
-  if(users[username]) {
-    return res.json(users[username]);
+  var hasUser = users.some(function(user) {
+      return user.username === username;
+  });
+  if(hasUser) {
+    return res.json(users.filter(function(user){
+      return user.username === username;
+    })[0]);
   }
   res.status(404).json({ error: 'Usuário não encontrado'});
+});
+
+app.post('/user', function(req, res) {
+  var username = req.body.username;
+  var age = req.body.age;
+  res.json({ username: username, age: age });
 });
 
 app.listen(3000);
