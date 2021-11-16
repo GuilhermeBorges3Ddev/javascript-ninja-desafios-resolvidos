@@ -30,7 +30,7 @@ describe('# SUM', function() {
   });
   it('Should sum() return an error if it receive just one parameter', function() {
     expect(sum(1)).to.be.an('error');
-  })
+  });
   it('Should sum() return an error if the parameter has not a number', function() {
     expect(sum('a','b')).to.be.an('error');
   });
