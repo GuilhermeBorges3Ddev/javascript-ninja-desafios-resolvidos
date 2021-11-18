@@ -13,6 +13,9 @@ var sum = require('../src/sum');
  * Para fazermos as asserções utilizaremos o módulo Chai...
  * A primeira asserção que fazemos é que o módulo 'sum' deve ser uma função.
  *
+ * Quando usamos BDD podemos usar o 'assert' que já vem no Node.JS ou o 'assert' do Chai.
+ * O assert.equal() espera 3 parâmetros: a variável que será executada(ou função), o valor esperado e uma mensagem.
+ *
 */
 
 describe('# SUM', function() {
@@ -34,4 +37,15 @@ describe('# SUM', function() {
   it('Should sum() return an error if the parameter has not a number', function() {
     expect(sum('a','b')).to.be.an('error');
   });
+  it('Assert', function() {
+    var assert = require('assert');
+    //Contrastamos aqui o TDD com o BDD, repare que o teste abaixo passará, porque é '=='
+    assert.equal(sum(20, 30), '50', 'Message');
+    expect(sum(20, 30)).to.be.equal(50);
+  });
+  it('StrictEqual', function() {
+    var assert = require('assert');
+    //O teste abaixo não passará, porque é '==='
+    assert.strictEqual(sum(20, 30), '50', 'Message');
+  })
 });
