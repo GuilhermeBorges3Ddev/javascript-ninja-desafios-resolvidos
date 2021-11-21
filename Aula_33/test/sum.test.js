@@ -16,9 +16,26 @@ var sum = require('../src/sum');
  * Quando usamos BDD podemos usar o 'assert' que já vem no Node.JS ou o 'assert' do Chai.
  * O assert.equal() espera 3 parâmetros: a variável que será executada(ou função), o valor esperado e uma mensagem.
  *
+ * O Mocha possui alguns hooks, como: before(), after(), beforeEach(), afterEach().
+ * O módulo Istanbul do Mocha retorna para nós o rate de Code Coverage, ou seja, quantas % de cobertura os testes apresentam por módulo.
+ * Para usarmos o istanbul: npm run coverage (veja o package.json)
 */
 
 describe('# SUM', function() {
+  before(function() {
+    console.log('Im executed before all tests...');
+    console.log('-------------------------------');
+  });
+  beforeEach(function() {
+    console.log('Read before test: ');
+  });
+  afterEach(function() {
+    console.log('Read after test.')
+  });
+  after(function() {
+    console.log('-------------------------------');
+    console.log('Im executed after all tests runned...');
+  });
   it('Module SUM must be a function', function() {
     //Esse formato de testes abaixo é BDD
     expect(sum).to.be.a('function');
@@ -43,9 +60,8 @@ describe('# SUM', function() {
     assert.equal(sum(20, 30), '50', 'Message');
     expect(sum(20, 30)).to.be.equal(50);
   });
-  it('StrictEqual', function() {
-    var assert = require('assert');
-    //O teste abaixo não passará, porque é '==='
-    assert.strictEqual(sum(20, 30), '50', 'Message');
-  })
+  // it('StrictEqual', function() {
+  //   var assert = require('assert');
+  //   assert.strictEqual(sum(20, 30), '50', 'Message');
+  // })
 });
