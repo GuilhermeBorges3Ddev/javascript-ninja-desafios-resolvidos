@@ -23,7 +23,7 @@
   var a = 1;
 
   function init() {
-    console.log('Hey');
+    console.log('Hey', a, 2, unknown);
   }
 
   init();
