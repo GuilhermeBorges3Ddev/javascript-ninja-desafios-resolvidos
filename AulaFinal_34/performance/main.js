@@ -10,6 +10,9 @@
  * Existe um comando de terminal que lista os arquivos e mostra os seus tamanhos: ls -la (em bytes) ou ls -lha(em kbytes)
  * Há como comprimir ainda mais o arquivo JS, porém desta maneira o nome de funções e variáveis são mudados: uglifyjs --output main.min.js --mangle --compress -- main.js
  * Obs: O Uglify não consegue comprimir variáveis globais, porém se passar via referência no parâmetro a compressão é feita
+ * Para conseguirmos debugar melhor o arquivo minificado no browser, utilizamos o mesmo comando para minificar, porém com o atributo --source-map:
+ * uglifyjs --source-map --output main.min.js --mangle --compress -- main.js
+ * Obs: Ao dar esse comando, temos umas versão mapeada do arquivo minificado, através do arquivo: main.min.js.map
 */
 
 (function(win) {
