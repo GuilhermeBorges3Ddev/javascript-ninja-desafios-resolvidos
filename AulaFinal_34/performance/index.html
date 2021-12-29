@@ -8,5 +8,22 @@
 </head>
 <body>
   <script src="./main.min.js"></script>
+  <script>
+    ;(function(){
+      //Garbage Collector - Como os objetos são alocados in-memory, quando eles deixam de ser usados localmente o JS limpa esses objetos da memória e devolve pro SO
+      'use strict'
+      var a = {
+        prop: '1',
+      }
+      var b = a
+      b.prop2 = '2'
+      var c = {
+        prop: '1',
+      }
+      //Aqui no objeto criado em window, o Garbage Collector não consegue agir, pois o escopo é global!
+      window.b = b
+      console.log(a, b, c, a === b, a === c)
+    })()
+  </script>
 </body>
 </html>
